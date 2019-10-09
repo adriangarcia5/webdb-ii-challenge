@@ -3,10 +3,17 @@
 module.exports = {
   development: {
     client: "sqlite3",
-    connection: {
-      filename: "/data/car-dealer.db3"
-    },
     useNullAsDefault: true,
+    connection: {
+      filename: "./data/car-dealer.db3"
+    },
+    migrations: {
+      directory: "./data/migrations",
+      tableName: "migrations"
+    },
+    seeds: {
+      directory: "./data/seeds"
+    }
   },
 
   staging: {
@@ -21,7 +28,8 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      directory: "./data/migrations",
+      tableName: "migrations"
     }
   },
 

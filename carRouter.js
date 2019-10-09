@@ -35,7 +35,7 @@ carRouter.get("/:id", (req, res) => {
 
 carRouter.post("/", (req, res) => {
   console.log(req.body);
-  if (!req.body.name || !req.body.budget) {
+  if (!req.body.VIN || !req.body.make || !req.body.model || !req.body.mileage) {
     res.status(400).json({
       errorMessage: "Please provide title and contents for the post."
     });
@@ -53,7 +53,7 @@ carRouter.post("/", (req, res) => {
 });
 
 carRouter.put("/:id", (req, res) => {
-  if (!req.body.name || !req.body.budget) {
+  if (!req.body.VIN || !req.body.make || !req.body.model || !req.body.mileage) {
     res.status(400).json({
       errorMessage: "Please provide title and contents for the post."
     });
